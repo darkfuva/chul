@@ -1,0 +1,11 @@
+.sectionTitle{
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-medium-chubby);
+}
+.cardsListContainer{
+    padding: 5px;
+    flex-wrap: nowrap;
+}
+.sectionContainer{
+    margin:20px 0;
+}

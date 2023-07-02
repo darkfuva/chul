@@ -1,0 +1,26 @@
+.userFormContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.formActions {
+  justify-content: initial;
+  padding-bottom: 28px;
+}
+
+.userFormElements {
+  width: 100%;
+}
+.dialogActions {
+  justify-content: initial;
+  padding: 20px 0px 20px 0px;
+}
+.userFormElements legend {
+  font-size: var(--font-size-xs);
+}
+
+.resizeFont {
+  font-size: var(--font-size-sm);
+}

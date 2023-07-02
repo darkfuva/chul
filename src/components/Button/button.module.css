@@ -1,0 +1,39 @@
+.whiteBtn,
+.orangeBtn {
+  font-size: 1.6rem;
+  line-height: 19px;
+  border-radius: 4px;
+  padding: 16px 24px;
+  transition: 0.5s all ease-in 0s;
+}
+
+.whiteBtn {
+  color: #c65728;
+  background: #fff;
+  border: 1px solid #c65728;
+}
+
+.whiteBtn:hover {
+  color: #fff;
+  background: #c65728;
+  cursor: pointer;
+}
+
+.orangeBtn {
+  color: #fff;
+  background: #c65728;
+  border: 1px solid #c65728;
+}
+
+.orangeBtn:hover {
+  color: #c65728;
+  background: #fff;
+  cursor: pointer;
+}
+
+.orangeBtn:disabled {
+  color: #fff;
+  background: #ffe2d5;
+  border: 1px solid #ffe2d5;
+  cursor: default;
+}

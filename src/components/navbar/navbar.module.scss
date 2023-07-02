@@ -1,0 +1,38 @@
+.leftNavbarContainer{
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    left: 0;
+    background: var(--ultralight-blue);
+}
+.leftNavbar{
+    width: 230px;
+}
+.imageWrapper{
+    height:100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.websiteTitle{
+    font-size: var(--font-size-md);
+    text-align: center;
+}
+.linksContainer{
+    font-size: var(--font-size-sm);
+    margin-top: 40px;
+    ul{
+        padding: 20px 10px;
+        transition: 0.3s;
+        cursor: pointer;
+        a{
+            text-decoration: none;
+            color: #000;
+            font-size: var(--font-size-md);
+        }
+        &:hover{
+            background: var(--sora-soft);
+        }
+    }
+}

@@ -1,0 +1,54 @@
+.dialogRoot {
+  font-family: var(--font-mulish);
+}
+
+.dialogTitle {
+  font-family: var(--font-mulish);
+  color: var(--fuji-darker);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-chubby);
+  padding: 48px 0 0 48px;
+}
+
+.dialogContent {
+  padding-top: 24px !important;
+  padding-left: 48px;
+  padding-right: 48px;
+}
+
+.dialogActions {
+  justify-content: initial;
+  padding: 0px 0px 48px 48px;
+}
+.primaryButton {
+  text-transform: none;
+  font-size: var(--font-size-sm);
+}
+
+.primaryButton:hover {
+  background-color: var(--sienna-darker);
+  opacity: 0.7;
+}
+.secondaryButton {
+  text-transform: none;
+  font-family: var(--font-mulish);
+  border: 1px solid var(--sienna-darker);
+  color: var(--sienna-darker);
+  font-size: var(--font-size-sm);
+  padding: 15px 24px;
+}
+.secondaryButton:hover {
+  opacity: 0.7;
+}
+
+/* Confirmation Dialog Css */
+
+.confirmationQuestion {
+  font-weight: var(--font-weight-medium-chubby);
+  font-size: var(--font-size-sm);
+  font-family: var(--font-mulish);
+}
+.confirmationDescription {
+  font-size: var(--font-size-sm);
+  font-family: var(--font-mulish);
+}
