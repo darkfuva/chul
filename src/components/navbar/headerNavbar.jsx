@@ -1,16 +1,18 @@
+import { useAppDispatch, useAppSelector } from "@/app/store/hooks";
+import styles from "./navbar.module.scss"
+import { showNavbar } from "@/app/store/slices/leftNavbarSlice";
+import MenuOpenIcon from '@mui/icons-material/MenuOpen';
+
 export default function HeaderNavbar() {
+  const dispatch = useAppDispatch()
+  const selector = useAppSelector((state)=>state.leftNavbar.isOpen)
   return (
     <div
-      style={{
-        position: 'absolute',
-        top: 0,
-        left: 230,
-        height: 70,
-        right: 0,
-        background: 'var(--fuji-dark)',
-      }}
+      className={`${styles.headerNavbar} ${selector? styles.shiftHeader:styles.unshiftHeader}`}
     >
-      Hedaer
+      <span onClick={()=>dispatch(showNavbar({isOpen: !selector}))} style={{ color: "white", fontSize:"50px",display: "flex", alignItems:'center'}}>
+        <MenuOpenIcon style={{transform:"scaleX(-1)"}} fontSize="70px"></MenuOpenIcon>
+      </span>
     </div>
   );
 }

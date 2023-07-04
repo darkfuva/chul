@@ -21,7 +21,7 @@ export default function BaseCard({
   return (
     <Card
       sx={{
-        width: containerWidth,
+        width: "95%",
         marginRight: '3px',
         borderTop: `5px solid ${borderColor? borderColor: "transparent"}`,
       }}

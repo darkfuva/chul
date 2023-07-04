@@ -4,13 +4,14 @@
     position: absolute;
     left: 0;
     background: var(--ultralight-blue);
+    z-index: 2;
+    transition: 0.5s;
 }
 .leftNavbar{
     width: 230px;
 }
 .imageWrapper{
-    height:100px;
-    width: 100px;
+    padding: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,3 +37,31 @@
         }
     }
 }
+.headerNavbar{
+        position: absolute;
+        display: flex;
+        align-items: center;
+        top: 0px;
+        left: 230px;
+        height: 70px;
+        right: 0px;
+        background: var(--fuji-dark)
+}
+
+@media only screen and (max-width: 1000px) {
+    .leftNavbar{
+        z-index: 2;
+    }
+    .shiftHeader{
+        left:230px
+    }
+    .unshiftHeader{
+        left: 0px
+    }
+    .showNavbarClass{
+        display: inherit;
+    }
+    .hideNavbarClass{
+        display: none;
+    }
+  }

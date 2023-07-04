@@ -2,7 +2,7 @@ import { Avatar, CardMedia } from '@mui/material';
 import BaseCard from '../baseCards/cards';
 import Bhujia from '../../../../public/Bhujia.jpg';
 
-export function ItemCards({ header, subheader, CardActionsFromProps, containerWidth = 230 }) {
+export function ItemCards({ header, subheader, CardActionsFromProps, containerWidth = 250 }) {
   return (
     <>
       <BaseCard

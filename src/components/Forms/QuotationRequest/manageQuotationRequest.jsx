@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { useFormBuilder } from '../FormBuilder';
 import styles from '../forms.module.css';
 import { DatePickerComponent } from '../FormFields/DatePicker';
+import { getAllProducts } from '@/dummyData/Company';
 
 let defaultGridProps = { lg: 6, md: 6, sm: 6, xs: 6 };
 let quoteFormConfig = [
@@ -19,23 +20,23 @@ let quoteFormConfig = [
   },
   {
     passedComponent: ({ ...props }) => {
-        return (
-          <DatePickerComponent
-            {...props}
-            id="requestedDeliveryDate"
-            label="Requested Delivery Date"
-            slotProps={{
-              textField: {
-                required: true,
-                error: props.error,
-                helperText: props.error
-                  ? 'Please enter value in mandatory fields'
-                  : '',
-              },
-            }}
-          />
-        );
-      },
+      return (
+        <DatePickerComponent
+          {...props}
+          id="requestedDeliveryDate"
+          label="Requested Delivery Date"
+          slotProps={{
+            textField: {
+              required: true,
+              error: props.error,
+              helperText: props.error
+                ? 'Please enter value in mandatory fields'
+                : '',
+            },
+          }}
+        />
+      );
+    },
     gridProps: defaultGridProps,
   },
   {
@@ -44,23 +45,23 @@ let quoteFormConfig = [
   },
   {
     passedComponent: ({ ...props }) => {
-        return (
-          <DatePickerComponent
-            {...props}
-            id="proposedDeliveryDate"
-            label="Proposed Delivery Date"
-            slotProps={{
-              textField: {
-                required: true,
-                error: props.error,
-                helperText: props.error
-                  ? 'Please enter value in mandatory fields'
-                  : '',
-              },
-            }}
-          />
-        );
-      },
+      return (
+        <DatePickerComponent
+          {...props}
+          id="proposedDeliveryDate"
+          label="Proposed Delivery Date"
+          slotProps={{
+            textField: {
+              required: true,
+              error: props.error,
+              helperText: props.error
+                ? 'Please enter value in mandatory fields'
+                : '',
+            },
+          }}
+        />
+      );
+    },
     gridProps: defaultGridProps,
   },
   {
@@ -76,10 +77,7 @@ let quoteFormConfig = [
       id: 'item',
       label: 'Item',
       select: true,
-      menuitems: ItemsList.map((val) => ({
-        label: val.header,
-        value: val.header,
-      })),
+      menuitems: getAllProducts().map(val=>({label:val.productName, value: val.id})),
     },
     gridProps: defaultGridProps,
   },
@@ -105,21 +103,36 @@ export default function ManageQuotationRequest({
           'deliveryAddress',
           'quantity',
           'item',
-          'totalPrice'
+          'totalPrice',
         ],
-        {  disabled: false } 
+        { disabled: false }
       );
-      quoteBuilder.setDefaultValues({...defaultValues, totalPrice: defaultValues.quantity * defaultValues.pricePerUnit});
+      quoteBuilder.setDefaultValues({
+        ...defaultValues,
+        totalPrice: defaultValues.quantity * defaultValues.pricePerUnit,
+      });
     }
   }, [defaultValues]);
   const [getAQuotePopupFlag, setGetAQuotePopupFlag] = useState(open);
-  const onChangequantity=()=>{
-    quoteBuilder.setValueState({...quoteBuilder.valueState, totalPrice:quoteBuilder.valueState.quantity * quoteBuilder.valueState.pricePerUnit})
-  }
-  const onChangepricePerUnit=()=>{
-    quoteBuilder.setValueState({...quoteBuilder.valueState, totalPrice:quoteBuilder.valueState.quantity * quoteBuilder.valueState.pricePerUnit})
-  }
-  const quoteBuilder = useFormBuilder({ formConfig: quoteFormConfig, onChangequantity, onChangepricePerUnit });
+  const onChangequantity = () => {
+    quoteBuilder.setValueState({
+      ...quoteBuilder.valueState,
+      totalPrice:
+        quoteBuilder.valueState.quantity * quoteBuilder.valueState.pricePerUnit,
+    });
+  };
+  const onChangepricePerUnit = () => {
+    quoteBuilder.setValueState({
+      ...quoteBuilder.valueState,
+      totalPrice:
+        quoteBuilder.valueState.quantity * quoteBuilder.valueState.pricePerUnit,
+    });
+  };
+  const quoteBuilder = useFormBuilder({
+    formConfig: quoteFormConfig,
+    onChangequantity,
+    onChangepricePerUnit,
+  });
 
   return (
     <FormPopup

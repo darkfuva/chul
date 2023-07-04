@@ -4,6 +4,8 @@ import InsightsIcon from '@mui/icons-material/Insights';
 import HomeIcon from '@mui/icons-material/Home';
 import ViewListIcon from '@mui/icons-material/ViewList';
 import HistoryIcon from '@mui/icons-material/History';
+import logo from '../../../public/foretail-logo.svg'
+import { useAppSelector } from '@/app/store/hooks';
 const linksList = [
   { href: '/dashboard', label: 'Home', icon:  HomeIcon},
   { href: '/quotations', label: 'Track Quotations', icon: InsightsIcon },
@@ -12,14 +14,12 @@ const linksList = [
 ];
 
 export default function LeftNavbar() {
+  const isNavbarOpen = useAppSelector((state)=>state.leftNavbar.isOpen)
   return (
-    <div className={styles.leftNavbarContainer}>
+    <div className={`${styles.leftNavbarContainer} ${isNavbarOpen?styles.showNavbarClass: styles.hideNavbarClass}`} >
       <div className={styles.leftNavbar}>
         <div className={styles.imageWrapper}>
-          <img height={100} width={100} alt="Website Logo"></img>
-        </div>
-        <div className={styles.websiteTitle}>
-          <span>Website Name</span>
+          <img height={100} src={logo.src} width={200} alt="Website Logo"></img>
         </div>
 
         <div className={styles.linksContainer}>

@@ -11,5 +11,13 @@
   top:75px;
   height: calc(100vh - 75px);
   position:absolute;
-  padding: 40px 10px 10px 40px;
+  padding: 40px 10px 5px 40px;
+}
+
+
+@media only screen and (max-width: 1000px) {
+  .contentContainer {
+    left: 0;
+    right: 0;
+  }
 }

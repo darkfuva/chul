@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="15 36 257 170" width="0px" height="0px" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <style bx:fonts="Aldrich">@import url(https://fonts.googleapis.com/css2?family=Aldrich%3Aital%2Cwght%400%2C400&amp;display=swap);</style>
+  </defs>
+  <path d="M 102.484 48.894 Q 109.14 36.357 115.796 48.894 L 185.688 180.536 Q 192.344 193.073 179.031 193.073 L 39.249 193.073 Q 25.936 193.073 32.592 180.536 Z" style="stroke: rgb(0, 0, 0); fill: rgb(59, 59, 59);" bx:shape="triangle 25.936 36.357 166.408 156.716 0.5 0.08 1@57f35a08"/>
+  <path style="stroke: rgba(0, 0, 0, 0); mix-blend-mode: multiply;" d="M 93.316 100.555 H 267.605 V 138.442 H 93.316 A 14 14 0 0 1 79.316 124.442 V 114.555 A 14 14 0 0 1 93.316 100.555 Z" bx:shape="rect 79.316 100.555 188.289 37.887 14 0 0 14 1@68673da1"/>
+  <text style="fill: rgb(255, 255, 255); font-family: Aldrich; font-size: 24px; letter-spacing: 9.3px; text-anchor: middle; text-transform: uppercase; white-space: pre;" transform="matrix(1.013574, 0, 0, 1, -160.667618, -146.383484)"><tspan x="334.481" y="274.015">Fo₹etail</tspan><tspan x="334.481" dy="1em">​</tspan><tspan x="334.481" dy="1em">​</tspan></text>
+</svg>
