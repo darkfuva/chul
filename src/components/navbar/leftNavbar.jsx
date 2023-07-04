@@ -6,6 +6,9 @@ import ViewListIcon from '@mui/icons-material/ViewList';
 import HistoryIcon from '@mui/icons-material/History';
 import logo from '../../../public/foretail-logo.svg'
 import { useAppSelector } from '@/app/store/hooks';
+import { ClickAwayListener } from '@mui/material';
+import { useDispatch } from 'react-redux';
+import { showNavbar } from '@/app/store/slices/leftNavbarSlice';
 const linksList = [
   { href: '/dashboard', label: 'Home', icon:  HomeIcon},
   { href: '/quotations', label: 'Track Quotations', icon: InsightsIcon },
@@ -14,8 +17,10 @@ const linksList = [
 ];
 
 export default function LeftNavbar() {
+  const dispatch=useDispatch();
   const isNavbarOpen = useAppSelector((state)=>state.leftNavbar.isOpen)
   return (
+    <ClickAwayListener onClickAway={()=>dispatch(showNavbar({isOpen:false}))}>
     <div className={`${styles.leftNavbarContainer} ${isNavbarOpen?styles.showNavbarClass: styles.hideNavbarClass}`} >
       <div className={styles.leftNavbar}>
         <div className={styles.imageWrapper}>
@@ -31,5 +36,6 @@ export default function LeftNavbar() {
         </div>
       </div>
     </div>
+    </ClickAwayListener>
   );
 }
