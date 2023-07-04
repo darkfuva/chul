@@ -20,7 +20,7 @@ export default function LeftNavbar() {
   const dispatch=useDispatch();
   const isNavbarOpen = useAppSelector((state)=>state.leftNavbar.isOpen)
   return (
-    <ClickAwayListener onClickAway={()=>dispatch(showNavbar({isOpen:false}))}>
+    // <ClickAwayListener onClickAway={()=>dispatch(showNavbar({isOpen:false}))}>
     <div className={`${styles.leftNavbarContainer} ${isNavbarOpen?styles.showNavbarClass: styles.hideNavbarClass}`} >
       <div className={styles.leftNavbar}>
         <div className={styles.imageWrapper}>
@@ -36,6 +36,6 @@ export default function LeftNavbar() {
         </div>
       </div>
     </div>
-    </ClickAwayListener>
+    // </ClickAwayListener>
   );
 }
